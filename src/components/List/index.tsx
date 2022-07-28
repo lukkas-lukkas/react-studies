@@ -1,9 +1,11 @@
+import './style.scss';
+
 export default function List() {
     return (
-        <aside>
+        <aside className='taskList'>
             <h2> Studies today </h2>
             <ul>
-                <li>
+                <li className='taskItem'>
                     <h3>
                         React
                     </h3>
@@ -11,7 +13,7 @@ export default function List() {
                         02:00:00
                     </span>
                 </li>
-                <li>
+                <li className='taskItem'>
                     <h3>
                         Javascript
                     </h3>
