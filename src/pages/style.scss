@@ -1,0 +1,15 @@
+.AppStyle {
+    min-width: 320px;
+    min-height: calc(100vh - 32px);
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #171717;
+    justify-content: center;
+    align-content: center;
+
+    @media screen and (min-width:1280px) {
+        padding: 64px;
+    }
+}
