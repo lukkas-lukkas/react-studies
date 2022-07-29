@@ -6,10 +6,11 @@ import Clock from "./Clock";
 import './style.scss';
 
 interface Props {
-  taskSelected: ITask | undefined
+  taskSelected: ITask | undefined,
+  finishTask: () => void,
 }
 
-export default function Timer({ taskSelected }: Props) {
+export default function Timer({ taskSelected, finishTask }: Props) {
   const [time, setTime] = useState<number>();
 
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function Timer({ taskSelected }: Props) {
         setTime(currencyTime);
         return regressive(currencyTime);
       }
+      finishTask();
     }, 1000);
   }
 
