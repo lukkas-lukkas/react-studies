@@ -18,13 +18,23 @@ export default function Timer({ taskSelected }: Props) {
     }
   }, [taskSelected]);
 
+  function regressive(counter: number = 0) {
+    setTimeout(() => {
+      if (counter > 0) {
+        const currencyTime = counter - 1;
+        setTime(currencyTime);
+        return regressive(currencyTime);
+      }
+    }, 1000);
+  }
+
   return (
     <div className='timer'>
       <p className='title'>Choise a card and start timer</p>
       <div className='clockWrapper'>
         <Clock time={time}/>
       </div>
-      <Button text="Start" />
+      <Button text="Start" onClick={() => regressive(time)} />
     </div>
   )
 }
