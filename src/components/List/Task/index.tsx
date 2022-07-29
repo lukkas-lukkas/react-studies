@@ -8,7 +8,7 @@ export default function Task({task, selectTask}: { task: ITask, selectTask: (tas
     }
 
     return (
-        <li className="taskItem" onClick={selectTaskAction}>
+        <li className={`taskItem ${task.selected ? 'taskItemCompleted' : ''}`} onClick={selectTaskAction}>
             <h3>{task.name}</h3>
             <span>{task.time}</span>
         </li>

@@ -13,6 +13,11 @@ function App() {
   function selectTask(taskSelected: ITask) {
     console.log('TASK_SELECTED', taskSelected);
     setTaskSelected(taskSelected);
+
+    setTasks(tasks => tasks.map(task => ({
+      ...task,
+      selected: task.id === taskSelected.id ? true : false,
+    })))
   }
 
   return (
