@@ -1,8 +1,11 @@
 import React from 'react';
+import { ITask } from '../../interfaces/ITask';
 import Button from '../Button';
 import './style.scss';
 
-class Form extends React.Component {
+class Form extends React.Component<{
+  setTasks: React.Dispatch<React.SetStateAction<ITask[]>>
+}> {
   state = {
     task: '',
     time: '00:00',
@@ -10,7 +13,13 @@ class Form extends React.Component {
 
   addTask(event: React.FormEvent) {
     event.preventDefault();
-    console.log('STATE: ', this.state);
+    
+    const task: ITask = {
+      name: this.state.task,
+      time: this.state.time,
+    };
+
+    this.props.setTasks(tasks => [...tasks, task]);
   }
 
   render() {
