@@ -21,9 +21,8 @@ export default function Timer({ taskSelected }: Props) {
   return (
     <div className='timer'>
       <p className='title'>Choise a card and start timer</p>
-      <h1>Time: {time}</h1>
       <div className='clockWrapper'>
-        <Clock />
+        <Clock time={time}/>
       </div>
       <Button text="Start" />
     </div>
