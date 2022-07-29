@@ -24,7 +24,7 @@ function App() {
     <div className="AppStyle">
       <Form setTasks={setTasks}/>
       <List tasks={tasks} selectTask={selectTask}/>
-      <Timer />
+      <Timer taskSelected={taskSelected}/>
     </div>
   );
 }

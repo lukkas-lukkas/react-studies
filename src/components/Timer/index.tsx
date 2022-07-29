@@ -1,11 +1,27 @@
+import { useEffect, useState } from "react";
+import { timeToSeconds } from "../../common/utils/date";
+import { ITask } from "../../interfaces/ITask";
 import Button from "../Button";
 import Clock from "./Clock";
 import './style.scss';
 
-export default function Timer() {
+interface Props {
+  taskSelected: ITask | undefined
+}
+
+export default function Timer({ taskSelected }: Props) {
+  const [time, setTime] = useState<number>();
+
+  useEffect(() => {
+    if (taskSelected?.time) {
+      setTime(timeToSeconds(taskSelected.time));
+    }
+  }, [taskSelected]);
+
   return (
     <div className='timer'>
       <p className='title'>Choise a card and start timer</p>
+      <h1>Time: {time}</h1>
       <div className='clockWrapper'>
         <Clock />
       </div>
