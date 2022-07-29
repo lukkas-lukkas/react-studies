@@ -17,6 +17,9 @@ class Form extends React.Component<{
     const task: ITask = {
       name: this.state.task,
       time: this.state.time,
+      selected: false,
+      completed: false,
+      id: new Date().getTime(),
     };
 
     this.setState({

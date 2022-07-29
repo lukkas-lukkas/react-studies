@@ -9,7 +9,7 @@ export default function List({ tasks }: { tasks: ITask[] }) {
             <h2> Studies today </h2>
             <ul>
                 {tasks.map((item, index) => (
-                    <Task name={item.name} time={item.time} key={index}/>
+                    <Task name={item.name} time={item.time} key={item.id} selected={item.selected} completed={item.completed} id={item.id}/>
                 ))}
             </ul>
         </aside>
