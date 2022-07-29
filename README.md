@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# React studies app
+
+Project developed to study the basis of React.js
+- React.js
+- Class components
+- Function components
+- Typescript
+
+![Application page](./public/images/app.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
