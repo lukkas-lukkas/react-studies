@@ -3,13 +3,18 @@ import { ITask } from '../../interfaces/ITask';
 import './style.scss';
 import Task from './Task';
 
-export default function List({ tasks }: { tasks: ITask[] }) {
+interface Props {
+    tasks: ITask[],
+    selectTask: (taskSelected: ITask) => void,
+}
+
+export default function List({ tasks, selectTask }: Props) {
     return (
         <aside className='taskList'>
             <h2> Studies today </h2>
             <ul>
-                {tasks.map((item, index) => (
-                    <Task name={item.name} time={item.time} key={item.id} selected={item.selected} completed={item.completed} id={item.id}/>
+                {tasks.map((task) => (
+                    <Task task={task} selectTask={selectTask} key={task.id}/>
                 ))}
             </ul>
         </aside>
