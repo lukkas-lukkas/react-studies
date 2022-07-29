@@ -11,7 +11,6 @@ function App() {
   const [taskSelected, setTaskSelected] = useState<ITask>();
 
   function selectTask(taskSelected: ITask) {
-    console.log('TASK_SELECTED', taskSelected);
     setTaskSelected(taskSelected);
 
     setTasks(tasks => tasks.map(task => ({
