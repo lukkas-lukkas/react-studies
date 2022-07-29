@@ -19,6 +19,11 @@ class Form extends React.Component<{
       time: this.state.time,
     };
 
+    this.setState({
+      task: '',
+      time: '00:00',
+    });
+
     this.props.setTasks(tasks => [...tasks, task]);
   }
 
@@ -36,7 +41,7 @@ class Form extends React.Component<{
             placeholder="What do you want study?"
             required
             value={this.state.task}
-            onChange={event => this.setState({...this.state, task: event.target.value})}
+            onChange={event => this.setState({ ...this.state, task: event.target.value })}
           />
         </div>
         <div className='inputContainer'>
