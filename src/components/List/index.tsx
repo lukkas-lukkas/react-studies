@@ -20,9 +20,16 @@ export default function List() {
 
     const [tasks, setTasks] = useState(defaultState);
 
+    const addTask = () => {
+        setTasks([...tasks, {
+            name: 'new task',
+            time: '01:00:00',
+        }])
+    }
+
     return (
         <aside className='taskList'>
-            <h2> Studies today </h2>
+            <h2 onClick={addTask} > Studies today </h2>
             <ul>
                 {tasks.map((item, index) => (
                     <Task name={item.name} time={item.time} />
